@@ -4,7 +4,7 @@
 #
 Name     : php-yaml
 Version  : 2.0.4
-Release  : 4
+Release  : 5
 URL      : https://pecl.php.net/get/yaml-2.0.4.tgz
 Source0  : https://pecl.php.net/get/yaml-2.0.4.tgz
 Summary  : No detailed summary available
@@ -30,6 +30,7 @@ lib components for the php-yaml package.
 
 %prep
 %setup -q -n yaml-2.0.4
+cd %{_builddir}/yaml-2.0.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -48,4 +49,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/yaml.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/yaml.so
