@@ -4,7 +4,7 @@
 #
 Name     : php-yaml
 Version  : 2.2.2
-Release  : 17
+Release  : 18
 URL      : https://pecl.php.net/get/yaml-2.2.2.tgz
 Source0  : https://pecl.php.net/get/yaml-2.2.2.tgz
 Summary  : No detailed summary available
@@ -49,4 +49,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20200930/yaml.so
+/usr/lib64/extensions/no-debug-non-zts-20210902/yaml.so
