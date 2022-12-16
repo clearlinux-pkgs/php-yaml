@@ -4,13 +4,14 @@
 #
 Name     : php-yaml
 Version  : 2.2.2
-Release  : 33
+Release  : 34
 URL      : https://pecl.php.net/get/yaml-2.2.2.tgz
 Source0  : https://pecl.php.net/get/yaml-2.2.2.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
 Requires: php-yaml-lib = %{version}-%{release}
+Requires: php-yaml-license = %{version}-%{release}
 BuildRequires : buildreq-php
 BuildRequires : re2c
 BuildRequires : yaml-dev
@@ -23,9 +24,18 @@ constructs and emit PHP constructs as valid YAML 1.1 documents.
 %package lib
 Summary: lib components for the php-yaml package.
 Group: Libraries
+Requires: php-yaml-license = %{version}-%{release}
 
 %description lib
 lib components for the php-yaml package.
+
+
+%package license
+Summary: license components for the php-yaml package.
+Group: Default
+
+%description license
+license components for the php-yaml package.
 
 
 %prep
@@ -41,6 +51,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-yaml
+cp %{_builddir}/yaml-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-yaml/5a96fce3231b38c51702c104bf339b6f035a30df
 %make_install
 
 
@@ -49,4 +61,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/yaml.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/yaml.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-yaml/5a96fce3231b38c51702c104bf339b6f035a30df
