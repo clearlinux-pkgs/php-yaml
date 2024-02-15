@@ -7,7 +7,7 @@
 #
 Name     : php-yaml
 Version  : 2.2.3
-Release  : 62
+Release  : 63
 URL      : https://pecl.php.net/get/yaml-2.2.3.tgz
 Source0  : https://pecl.php.net/get/yaml-2.2.3.tgz
 Summary  : No detailed summary available
